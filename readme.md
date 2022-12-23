@@ -74,5 +74,7 @@ The current configuration of the AppGyver app doesn't allow the use of the navig
 Now we can use the navigation arrows of the launchpad and AppGyver app.
 
 ## References
-[HTML5 Deployment tutorial](https://github.com/SAP-samples/multi-cloud-html5-apps-samples/tree/main/managed-html5-runtime-basic-mta)
-[Deployment Configuration in BTP](https://github.com/miyasuta/central-launchpad-cap)
+
+This tutorial was built on the SAP-samples about [HTML5 apps deployment](https://github.com/SAP-samples/multi-cloud-html5-apps-samples/tree/main/managed-html5-runtime-basic-mta).
+
+The solution to the navigation problem was discovered by Aocheng Yang in the comments of [Using BTP Authentication and Destinations with SAP AppGyver *and deploy it to BTP](https://blogs.sap.com/2022/07/01/using-btp-authentication-and-destinations-with-sap-appgyver/).
