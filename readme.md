@@ -5,6 +5,7 @@
 This is an example of a SAP AppGyver HTML5 app that is accessed by a managed application router and is integrated into the SAP Launchpad service. During the deployment (`cf deploy`), the HTML5 app is pushed to the HTML5 Application Repository and uses the Authentication & Authorization service (XSUAA service) and the destination service. The (`HTML5Module`) are the contents of the ZIP file built with SAP AppGyver Community Edition. Deployment made in a hanatrial account.
 
 ## Download and Deployment
+
 1. Subscribe to the [SAP Launchpad service](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-getting-started.html).
 2. Download the source code:
     ```
@@ -34,35 +35,18 @@ This is an example of a SAP AppGyver HTML5 app that is accessed by a managed app
 ### List the Deployed HTML5 Apps
 ```
 $ cf html5-list -di log-app-destination-service -u --runtime launchpad                                 
-Getting list of HTML5 applications in org 9f10ed8atrial / space dev as firstname.lastname@domain.com...
+Getting list of HTML5 applications in org orgname / space dev as firstname.lastname@domain.com...
 OK
 
-name       version   app-host-id                            service name    destination name                        last changed                    url   
-logapp     1.0.0     bcd2d34a-1625-47ab-bf42-4f054970b911   log.service     my_service_hello_world_html_repo_host   Tue, 16 Feb 2021 10:51:10 GMT   {url}
-```
-
-
-### List the Deployed MTA
-
-```
-$ cf mta hello-world
-Showing health and status for multi-target app hello-world in org 9f10ed8atrial / space dev as firstname.lastname@domain.com...
-OK
-Version: 1.0.0
-
-Apps:
-name   requested state   instances   memory   disk   urls   
-
-Services:
-name                                 service           plan          bound apps   last operation   
-hello-world-destination-service      destination       lite                       create succeeded   
-hello-world-html5-app-host-service   html5-apps-repo   app-host                   create succeeded   
-hello-world-xsuaa-service            xsuaa             application                create succeeded  
-
+name       version   app-host-id     service name       destination name              last changed                    url
+logapp     1.0.0     {app}           logservice         log-app-html5-repo-host       Tue, 16 Feb 2021 10:51:10 GMT   {url}
 ```
 
 ### Check the HTML5 App
 
-Access the URL described in [Download and Deployment](#download-and-deployment) to view the web app. You are redirected to a sign-on page before you can see the web app.
+Access the URL previously described to view the web app. You are redirected to a sign-on page before you can see the web app.
 
 ![webapp](result.png)
+
+## Integration with FLP
+

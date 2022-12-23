@@ -1,7 +1,8 @@
 _schema-version: "3.2"
 ID: log-app
 version: 1.0.0
-
+parameters:
+  enable-parallel-deployments: true
 build-parameters:
   before-all:
     - builder: custom
@@ -27,15 +28,15 @@ modules:
       content:
         instance:
           destinations:
-            - Authentication: OAuth2UserTokenExchange
-              Name: log-app-uaa
-              ServiceInstanceName: log-app-uaa
-              ServiceKeyName: log-app-uaa-key
-              sap.cloud.service: logservice
-            - Name: log-app-html5-repo-host
-              ServiceInstanceName: log-app-html5-repo-host
-              ServiceKeyName: log-app-html5-repo-host-key
-              sap.cloud.service: logservice
+          - Authentication: OAuth2UserTokenExchange
+            Name: log-app-uaa
+            ServiceInstanceName: log-app-uaa
+            ServiceKeyName: log-app-uaa-key
+            sap.cloud.service: logservice
+          - Name: log-app-html5-repo-host
+            ServiceInstanceName: log-app-html5-repo-host
+            ServiceKeyName: log-app-html5-repo-host-key
+            sap.cloud.service: logservice
           existing_destinations_policy: update
     build-parameters:
       no-source: true
@@ -59,7 +60,8 @@ modules:
     build-parameters:
       builder: custom
       commands:
-        - npm run build
+      - npm install
+      - npm run build
       supported-platforms: []
 resources:
   - name: log-app-uaa
