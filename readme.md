@@ -60,7 +60,7 @@ Access the URL previously described to view the web app. You are redirected to a
 
 ### Check the FLP view of HTML5 App
 
-![webapp](result-flp.png)
+![flpapp](result-flp.png)
 
 ## Problems
 
