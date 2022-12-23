@@ -31,11 +31,11 @@ modules:
               Name: log-app-uaa
               ServiceInstanceName: log-app-uaa
               ServiceKeyName: log-app-uaa-key
-              sap.cloud.service: log.service
+              sap.cloud.service: logservice
             - Name: log-app-html5-repo-host
               ServiceInstanceName: log-app-html5-repo-host
               ServiceKeyName: log-app-html5-repo-host-key
-              sap.cloud.service: log.service
+              sap.cloud.service: logservice
           existing_destinations_policy: update
     build-parameters:
       no-source: true

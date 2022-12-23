@@ -37,7 +37,7 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "log.service"
+    "service": "logservice"
   },
   "sap.ui": {
     "technology": "URL",
