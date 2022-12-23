@@ -11,6 +11,7 @@
       "source": "^(.*)$",
       "target": "$1",
       "service": "html5-apps-repo-rt",
+      "cacheControl": "no-cache, must-revalidate",
       "authenticationType": "xsuaa"
     }
   ]

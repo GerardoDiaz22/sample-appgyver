@@ -69,6 +69,7 @@ resources:
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
+      service-name: log-app_html_repo_host-service
       service-plan: app-host
       service-keys: 
         - name: log-app_html_repo_host-key

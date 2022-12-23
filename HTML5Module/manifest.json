@@ -29,7 +29,7 @@
     "config": {
         "target": {
             "type": "URL",
-            "url": "{url}",
+            "url": "./logservice.logapp/index.html",
             "navmode": "inplace",
             "parameters": {}
         }
