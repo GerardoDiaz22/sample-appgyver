@@ -12,8 +12,14 @@ modules:
   - name: log-app-destination-content
     type: com.sap.application.content
     requires:
-      - name: log-app_uaa
-      - name: log-app_html_repo_host
+      - name: log-app-uaa
+        parameters:
+          service-key:
+            name: log-app-uaa-key
+      - name: log-app-html5-repo-host
+        parameters:
+          service-key:
+            name: log-app-html5-repo-host-key
       - name: log-app-destination-service
         parameters:
           content-target: true
@@ -21,23 +27,23 @@ modules:
       content:
         instance:
           destinations:
-            - Name: my_service_log_app_html_repo_host
-              ServiceInstanceName: log-app-html-repo-host-service
-              ServiceKeyName: log-app_html_repo_host-key
+            - Authentication: OAuth2UserTokenExchange
+              Name: log-app-uaa
+              ServiceInstanceName: log-app-uaa
+              ServiceKeyName: log-app-uaa-key
               sap.cloud.service: log.service
-            - Name: my_service_uaa_log_app
-              ServiceInstanceName: log-app_uaa
-              ServiceKeyName: log-app_uaa-key
+            - Name: log-app-html5-repo-host
+              ServiceInstanceName: log-app-html5-repo-host
+              ServiceKeyName: log-app-html5-repo-host-key
               sap.cloud.service: log.service
-              Authentication: OAuth2UserTokenExchange
           existing_destinations_policy: update
     build-parameters:
       no-source: true
-  - name: log-app_ui_deployer
+  - name: log-app-ui-deployer
     type: com.sap.application.content
-    path: .
+    path: log-app-ui-deployer
     requires:
-      - name: log-app_html_repo_host
+      - name: log-app-html5-repo-host
         parameters:
           content-target: true
     build-parameters:
@@ -56,28 +62,23 @@ modules:
         - npm run build
       supported-platforms: []
 resources:
-  - name: log-app-destination-service
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: destination
-      service-name: log-app-destination-service
-      service-plan: lite
-      config:
-        HTML5Runtime_enabled: true
-        version: 1.0.0
-  - name: log-app_html_repo_host
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: html5-apps-repo
-      service-name: log-app-html-repo-host-service
-      service-plan: app-host
-      service-keys: 
-        - name: log-app_html_repo_host-key
-  - name: log-app_uaa
+  - name: log-app-uaa
     type: org.cloudfoundry.managed-service
     parameters:
       path: ./xs-security.json
       service: xsuaa
       service-plan: application
-      service-keys: 
-        - name: log-app_uaa-key
+  - name: log-app-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: true
+        version: 1.0.0
+      service: destination
+      service-plan: lite
+  - name: log-app-html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-name: log-app-html5-repo-host
+      service-plan: app-host

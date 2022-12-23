@@ -1,5 +1,5 @@
 {
-  "xsappname": "hello-world",
+  "xsappname": "log-app",
   "tenant-mode": "dedicated",
   "description": "Security profile of called application",
   "scopes": [
