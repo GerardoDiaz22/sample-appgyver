@@ -41,7 +41,7 @@ modules:
       no-source: true
   - name: log-app-ui-deployer
     type: com.sap.application.content
-    path: log-app-ui-deployer
+    path: .
     requires:
       - name: log-app-html5-repo-host
         parameters:
