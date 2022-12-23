@@ -21,11 +21,11 @@ modules:
       content:
         instance:
           destinations:
-            - Name: my_service_hello_world_html_repo_host
-              ServiceInstanceName: log-app_html_repo_host
+            - Name: my_service_log_app_html_repo_host
+              ServiceInstanceName: log-app-html-repo-host-service
               ServiceKeyName: log-app_html_repo_host-key
               sap.cloud.service: log.service
-            - Name: my_service_uaa_hello_world
+            - Name: my_service_uaa_log_app
               ServiceInstanceName: log-app_uaa
               ServiceKeyName: log-app_uaa-key
               sap.cloud.service: log.service
@@ -69,7 +69,7 @@ resources:
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
-      service-name: log-app_html_repo_host-service
+      service-name: log-app-html-repo-host-service
       service-plan: app-host
       service-keys: 
         - name: log-app_html_repo_host-key
