@@ -46,7 +46,7 @@ logapp      1.0.0     fcab8c95-d025-4051-8e12-f5856b2f8358   logservice     log-
 
 Access the URL previously described to view the web app. You are redirected to a sign-on page before you can see the web app.
 
-![webapp](result.png)
+![webapp](result-app.png)
 
 ## Integration with FLP
 
