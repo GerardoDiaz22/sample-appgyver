@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an example of a SAP AppGyver HTML5 app that is accessed by a managed application router and is integrated into the SAP Launchpad service. During the deployment (`cf deploy`), the HTML5 app is pushed to the HTML5 Application Repository and uses the Authentication & Authorization service (XSUAA service) and the destination service. The (`HTML5Module`) are the contents of the ZIP file built with SAP AppGyver Community Edition. Deployment made in a hanatrial account.
+This is an example of a SAP AppGyver HTML5 app that is accessed by a managed application router and is integrated into the SAP Launchpad service. During the deployment `cf deploy`, the HTML5 app is pushed to the HTML5 Application Repository and uses the Authentication & Authorization service (XSUAA service) and the destination service. The `HTML5Module` are the contents of the ZIP file built with SAP AppGyver Community Edition. Deployment made in a hanatrial account.
 
 ## Download and Deployment
 
@@ -60,19 +60,19 @@ Access the URL previously described to view the web app. You are redirected to a
 
 ## Problems
 
-The current configuration of the AppGyver app doesn't allow the use of the navigation stack inside a launchpad context, this problem is caused by the intent based navigation and SAP parameters of a launchpad app which cannot be disabled on the (`manifest.json`) of the HTML5 app. However, a workaround for this issue is described in the following:
+The current configuration of the AppGyver app doesn't allow the use of the navigation stack inside a launchpad context, this problem is caused by the intent based navigation and SAP parameters of a launchpad app which cannot be disabled on the `manifest.json` of the HTML5 app. However, a workaround for this issue is described in the following:
 
 1. Create a new tile in the Content Manager
-2. Enter the URL of the app detailed on [Download and Deployment](#download-and-deployment) in the (`URL`) field
-3. Uncheck (`Add intent and default SAP parameters to URL`)
+2. Enter the URL of the app detailed on [Download and Deployment](#download-and-deployment) in the `URL` field
+3. Uncheck `Add intent and default SAP parameters to URL`
 4. Fill the remaining mandatory fields
 5. Save the tile
 6. Add Rols and Groups as needed
 7. Open site
 8. See the manually created App tile
 
-Now we can use the (`NavBack`) arrows of the launchpad and AppGyver app.
+Now we can use the navigation arrows of the launchpad and AppGyver app.
 
 ## References
-[HTML5 Deployment]https://github.com/SAP-samples/multi-cloud-html5-apps-samples/tree/main/managed-html5-runtime-basic-mta
-[Deployment Configuration]https://github.com/miyasuta/central-launchpad-cap
+[HTML5 Deployment tutorial](https://github.com/SAP-samples/multi-cloud-html5-apps-samples/tree/main/managed-html5-runtime-basic-mta)
+[Deployment Configuration in BTP](https://github.com/miyasuta/central-launchpad-cap)
