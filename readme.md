@@ -58,7 +58,7 @@ Access the URL previously described to view the web app. You are redirected to a
 6. Open desired site
 7. See the new Logs tile
 
-### Check the FLP view of HTML5 App
+### Check the FLP view of the HTML5 App
 
 ![flpapp](result-flpview.png) 
 
