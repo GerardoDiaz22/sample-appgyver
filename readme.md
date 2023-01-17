@@ -62,7 +62,7 @@ Access the URL previously described to view the web app. You are redirected to a
 
 ![flpapp](result-flpview.png) 
 
-## Problems
+## Known Issues
 
 The current configuration of the AppGyver app doesn't allow the use of the navigation stack inside a launchpad context, this problem is caused by the intent based navigation and SAP parameters of a launchpad app which cannot be disabled on the `manifest.json` of the HTML5 app. However, a workaround for this issue is described in the following:
 
